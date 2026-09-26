@@ -74,10 +74,7 @@ impl TextureManager {
                     }
                 })
                 .collect(),
-            atlas: {
-                atlas.save("aaa.png");
-                Self::load_dynamic_image(&atlas, rl, thread)
-            },
+            atlas: Self::load_dynamic_image(&atlas, rl, thread),
         }
     }
     fn get_with_rect(&self, texture: AssetId) -> (&Texture2D, Rectangle) {
